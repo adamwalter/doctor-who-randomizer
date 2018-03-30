@@ -17,6 +17,7 @@ var uniqueSelectors = require('postcss-unique-selectors');
 
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
+var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
 var changed = require('gulp-changed');
@@ -79,6 +80,7 @@ gulp.task('jshint', function() {
 
 gulp.task('js', ['jshint'], function () {
 	return gulp.src('assets/scripts/source/*.js')
+		.pipe(concat('main.js'))
 		.pipe(production(uglify()))
         .pipe(gulp.dest('assets/scripts/site'));
 });
