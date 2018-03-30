@@ -19,10 +19,14 @@ var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var uglify = require('gulp-uglify');
 
+var changed = require('gulp-changed');
+var imagemin = require('gulp-imagemin');
+
 gulp.task('browsersync', function() {
     browserSync.init({
-        proxy: 'doctorwhorandomizer.dev',
-		port: 1337
+        proxy: 'doctorwhorandomizer.local',
+		port: 1337,
+		notify: false
     });
 });
 
@@ -68,9 +72,9 @@ gulp.task('sass', function() {
 
 gulp.task('jshint', function() {
 	return gulp.src('assets/scripts/source/*.js')
-      .pipe(jshint())
-      .pipe(jshint.reporter(stylish))
-	  .pipe(jshint.reporter('fail'));
+        .pipe(jshint())
+        .pipe(jshint.reporter(stylish))
+	    .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('js', ['jshint'], function () {
@@ -84,6 +88,15 @@ gulp.task('js-watch', ['js'], function(done) {
 	done();
 });
 
+gulp.task('images', function() {
+    return gulp.src('assets/images/source/*.{svg,png,gif,jpg,jpeg}')
+        .pipe(changed('assets/images/'))
+        .pipe(imagemin({
+			optimizationLevel: 7
+		}))
+        .pipe(gulp.dest('assets/images/'));
+});
+
 gulp.task('reload-watch', function(done) {
 	browserSync.reload();
 	done();
@@ -93,6 +106,7 @@ gulp.task('default', ['browsersync'], function() {
 	gulp.watch('assets/sass/**/*.scss', ['sass']);
 	gulp.watch('assets/scripts/source/*.js', ['js-watch']);
 	gulp.watch('./*.html', ['reload-watch']);
+	gulp.watch('assets/images/source/*.{svg,png,gif,jpg,jpeg}', ['images', 'reload-watch']);
 });
 
 gulp.task('set-prod', production.task);

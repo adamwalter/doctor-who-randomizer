@@ -41,3 +41,512 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+@font-face {
+  font-family: 'Bureau Grotesque';
+  src: url("../fonts/bureau-grotesque-one-three.woff") format("woff"), url("../fonts/bureau-grotesque-one-three.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Eurostile';
+  src: url("../fonts/eurostile.woff") format("woff"), url("../fonts/eurostile.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Futura Bold';
+  src: url("../fonts/futura-bold.woff2") format("woff2"), url("../fonts/futura-bold.woff") format("woff"), url("../fonts/futura-bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Futura Extra Bold';
+  src: url("../fonts/futura-extra-bold.woff2") format("woff2"), url("../fonts/futura-extra-bold.woff") format("woff"), url("../fonts/futura-extra-bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Della Robbia Bold';
+  src: url("../fonts/della-robbia-bold.woff2") format("woff2"), url("../fonts/della-robbia-bold.woff") format("woff"), url("../fonts/della-robbia-bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Arial MT Extra Bold';
+  src: url("../fonts/arial-rounded-mt-extrabold.woff") format("woff"), url("../fonts/arial-rounded-mt-extrabold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'UniversLT Ultra Condensed';
+  src: url("../fonts/universlt-ultra-condensed.woff2") format("woff2"), url("../fonts/universlt-ultra-condensed.woff") format("woff"), url("../fonts/universlt-ultra-condensed.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Futura Book';
+  src: url("../fonts/futura-book.woff2") format("woff2"), url("../fonts/futura-book.woff") format("woff"), url("../fonts/futura-book.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Contax Pro';
+  src: url("../fonts/contax-pro-75-bold-sc.woff") format("woff"), url("../fonts/contax-pro-75-bold-sc.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'SF Movie Poster';
+  src: url("../fonts/sf-movie-poster-bold.woff") format("woff"), url("../fonts/sf-movie-poster-bold.ttf") format("truetype");
+}
+
+::-moz-selection {
+  background: #fff;
+  color: #000;
+  text-shadow: none;
+}
+
+::selection {
+  background: #fff;
+  color: #000;
+  text-shadow: none;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,*:after,*:before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.screen-reader-text {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+
+body {
+  background-attachment: fixed;
+  background-color: #000;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.hartnell {
+  background-image: url("../images/bg-hartnell.jpg");
+}
+
+body.troughton {
+  background-image: url("../images/bg-troughton.jpg");
+}
+
+body.pertwee {
+  background-image: url("../images/bg-pertwee.jpg");
+}
+
+body.tbaker,body.tbaker2 {
+  background-image: url("../images/bg-tbaker.jpg");
+}
+
+body.davison {
+  background-image: url("../images/bg-davison.jpg");
+}
+
+body.cbaker {
+  background-image: url("../images/bg-cbaker.jpg");
+}
+
+body.mccoy {
+  background-image: url("../images/bg-mccoy.jpg");
+}
+
+body.eccleston {
+  background-image: url("../images/bg-eccleston.jpg");
+}
+
+body.tennant {
+  background-image: url("../images/bg-eccleston.jpg");
+}
+
+body.smith {
+  background-image: url("../images/bg-smith.jpg");
+}
+
+body.smith2 {
+  background-image: url("../images/bg-smith2.jpg");
+}
+
+body.capaldi {
+  background-image: url("../images/bg-capaldi.jpg");
+}
+
+.vortex {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  padding: 0 5%;
+  text-align: center;
+}
+
+.hartnell .title {
+  color: #fff;
+  font-family: 'Bureau Grotesque', sans-serif;
+  font-size: 2.75rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1;
+  text-shadow: 0 0 100px black;
+  text-transform: uppercase;
+}
+
+.troughton .title {
+  color: #f1f1f1;
+  font-family: 'Eurostile', sans-serif;
+  font-size: 2.25rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+.pertwee .title {
+  color: #f5f571;
+  font-family: 'Futura Bold', sans-serif;
+  font-size: 2.625rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.tbaker .title {
+  color: #fff;
+  font-family: 'Futura Extra Bold', sans-serif;
+  font-size: 2.25rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0 0 100px #0c0f21;
+  text-transform: uppercase;
+  word-spacing: -0.125em;
+}
+
+.tbaker2 .title {
+  color: #fff;
+  font-family: 'Della Robbia Bold', sans-serif;
+  font-size: 2.625rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.05;
+  text-shadow: 0 0 100px #0c0f21;
+  text-transform: uppercase;
+}
+
+.cbaker .title,.davison .title {
+  color: #fff;
+  font-family: 'Arial MT Extra Bold', sans-serif;
+  font-size: 2.25rem;
+  line-height: 1.1;
+  letter-spacing: 0.0625rem;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+}
+
+.mccoy .title {
+  color: #fff;
+  font-family: 'UniversLT Ultra Condensed', sans-serif;
+  font-size: 2.875rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 0.9;
+  text-shadow: 0 0 40px #260362;
+  text-transform: uppercase;
+}
+
+.eccleston .title,.tennant .title {
+  color: #fff;
+  font-family: 'Futura Book', sans-serif;
+  font-size: 2.25rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 0.9;
+  text-shadow: 0 0 20px #1c0201;
+  text-transform: uppercase;
+}
+
+.smith .title {
+  color: #fff;
+  font-family: 'Contax Pro', sans-serif;
+  font-size: 1.875rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 6;
+  line-height: 1.2;
+  text-shadow: 0 0 20px #15131e;
+  text-transform: uppercase;
+  word-spacing: 4;
+}
+
+.smith2 .title {
+  color: #fff;
+  font-family: 'SF Movie Poster', sans-serif;
+  font-size: 2.875rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 6;
+  line-height: 1;
+  text-shadow: 1px 2px 3px #2c1a16;
+  text-transform: uppercase;
+}
+
+.title-create {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.title-create:focus,.title-create:hover {
+  outline: 0;
+}
+
+.title-create:focus img,.title-create:hover img {
+  opacity: 1;
+}
+
+.title-create img {
+  width: 32px;
+  height: 32px;
+  opacity: 0.5;
+  -webkit-transition: opacity 100ms ease-out;
+  transition: opacity 100ms ease-out;
+}
+
+@media (min-width: 400px) {
+  .hartnell .title {
+    font-size: 3.5rem;
+  }
+  .troughton .title {
+    font-size: 2.875rem;
+  }
+  .pertwee .title {
+    font-size: 3.125rem;
+  }
+  .tbaker .title {
+    font-size: 2.875rem;
+  }
+  .tbaker2 .title {
+    font-size: 3.125rem;
+  }
+  .cbaker .title,.davison .title {
+    font-size: 2.875rem;
+  }
+  .mccoy .title {
+    font-size: 3.5rem;
+  }
+  .eccleston .title,.tennant .title {
+    font-size: 2.75rem;
+  }
+  .smith .title {
+    font-size: 2.25rem;
+  }
+  .smith2 .title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .tbaker .title {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 568px) {
+  .cbaker .title,.davison .title {
+    font-size: 4.25rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .hartnell .title {
+    font-size: 5rem;
+  }
+  .troughton .title {
+    font-size: 4rem;
+  }
+  .pertwee .title {
+    font-size: 4.375rem;
+  }
+  .tbaker .title {
+    font-size: 4.375rem;
+  }
+  .tbaker2 .title {
+    font-size: 4.375rem;
+  }
+  .mccoy .title {
+    font-size: 4.375rem;
+  }
+  .eccleston .title,.tennant .title {
+    font-size: 3.75rem;
+    text-shadow: 0 0 40px #1c0201;
+  }
+  .smith .title {
+    font-size: 2.875rem;
+    letter-spacing: 8;
+    text-shadow: 0 0 40px #15131e;
+  }
+  .smith2 .title {
+    font-size: 5rem;
+    letter-spacing: 10;
+    text-shadow: 2px 3px 3px rgba(44, 26, 22, 0.8);
+  }
+}
+
+@media (min-width: 800px) {
+  .hartnell .title {
+    font-size: 6.25rem;
+  }
+  .troughton .title {
+    font-size: 5rem;
+  }
+  .pertwee .title {
+    font-size: 5rem;
+  }
+  .tbaker2 .title {
+    font-size: 5rem;
+  }
+  .cbaker .title,.davison .title {
+    font-size: 5rem;
+    -webkit-text-stroke-width: 2px;
+  }
+  .mccoy .title {
+    font-size: 6rem;
+  }
+  .eccleston .title,.tennant .title {
+    font-size: 4.375rem;
+  }
+  .smith .title {
+    font-size: 3.75rem;
+  }
+  .smith2 .title {
+    font-size: 6.25rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .hartnell .title {
+    font-size: 7.5rem;
+  }
+  .troughton .title {
+    font-size: 6rem;
+  }
+  .cbaker .title,.davison .title {
+    font-size: 6rem;
+  }
+  .mccoy .title {
+    font-size: 6.875rem;
+  }
+  .eccleston .title,.tennant .title {
+    font-size: 5rem;
+    text-shadow: 0 0 60px #1c0201;
+  }
+  .smith .title {
+    font-size: 4.375rem;
+    letter-spacing: 10;
+    text-shadow: 0 0 80px #15131e;
+  }
+  .smith2 .title {
+    font-size: 6.875rem;
+  }
+}
+
+@media (min-width: 1020px) {
+  .tbaker .title {
+    font-size: 6rem;
+  }
+  .tbaker2 .title {
+    font-size: 6.25rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .pertwee .title {
+    font-size: 7rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .title {
+    padding: 0 8%;
+  }
+  .hartnell .title {
+    font-size: 8.75rem;
+  }
+  .troughton .title {
+    font-size: 7rem;
+  }
+  .cbaker .title,.davison .title {
+    font-size: 7.5rem;
+  }
+  .mccoy .title {
+    font-size: 7.75rem;
+  }
+  .eccleston .title,.tennant .title {
+    font-size: 6.25rem;
+  }
+  .smith .title {
+    font-size: 5rem;
+  }
+  .smith2 .title {
+    font-size: 7.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .tbaker .title {
+    font-size: 7.5rem;
+  }
+  .tbaker2 .title {
+    font-size: 7.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hartnell .title {
+    font-size: 9.375rem;
+  }
+  .troughton .title {
+    font-size: 8.75rem;
+  }
+  .pertwee .title {
+    font-size: 8.75rem;
+  }
+  .tbaker .title {
+    font-size: 8.75rem;
+  }
+  .tbaker2 .title {
+    font-size: 9.375rem;
+  }
+  .mccoy .title {
+    font-size: 8.75rem;
+  }
+  .eccleston .title,.tennant .title {
+    font-size: 6.875rem;
+  }
+  .smith2 .title {
+    font-size: 8.75rem;
+    text-shadow: 3px 4px 3px rgba(44, 26, 22, 0.7);
+  }
+}
