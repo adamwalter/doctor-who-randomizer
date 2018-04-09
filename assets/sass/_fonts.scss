@@ -72,3 +72,11 @@
     src: url('../fonts/sf-movie-poster-bold.woff') format('woff'),
          url('../fonts/sf-movie-poster-bold.ttf') format('truetype');
 }
+
+// Capaldi - Heroic Condensed Medium
+@font-face {
+    font-family: 'Heroic Condensed Medium';
+    src: url('../fonts/heroic-condensed-medium.woff2') format('woff2'),
+         url('../fonts/heroic-condensed-medium.woff') format('woff'),
+         url('../fonts/heroic-condensed-medium.ttf') format('truetype');
+}

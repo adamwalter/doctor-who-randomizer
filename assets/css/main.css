@@ -92,6 +92,143 @@ table {
   src: url("../fonts/sf-movie-poster-bold.woff") format("woff"), url("../fonts/sf-movie-poster-bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Heroic Condensed Medium';
+  src: url("../fonts/heroic-condensed-medium.woff2") format("woff2"), url("../fonts/heroic-condensed-medium.woff") format("woff"), url("../fonts/heroic-condensed-medium.ttf") format("truetype");
+}
+
+@-webkit-keyframes rotateIn {
+  from {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -180deg);
+            transform: rotate3d(0, 0, 1, -180deg);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -180deg);
+            transform: rotate3d(0, 0, 1, -180deg);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes mmslideIn {
+  from {
+    -webkit-transform: translateY(15%);
+            transform: translateY(15%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes mmslideIn {
+  from {
+    -webkit-transform: translateY(15%);
+            transform: translateY(15%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes mmslideOut {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+}
+
+@keyframes mmslideOut {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+}
+
 ::-moz-selection {
   background: #fff;
   color: #000;
@@ -160,12 +297,8 @@ body.mccoy {
   background-image: url("../images/bg-mccoy.jpg");
 }
 
-body.eccleston {
-  background-image: url("../images/bg-eccleston.jpg");
-}
-
-body.tennant {
-  background-image: url("../images/bg-eccleston.jpg");
+body.eccleston-tennant {
+  background-image: url("../images/bg-eccleston-tennant.jpg");
 }
 
 body.smith {
@@ -178,15 +311,6 @@ body.smith2 {
 
 body.capaldi {
   background-image: url("../images/bg-capaldi.jpg");
-}
-
-.vortex {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
 }
 
 .title {
@@ -215,7 +339,7 @@ body.capaldi {
   color: #f1f1f1;
   font-family: 'Eurostile', sans-serif;
   font-size: 2.25rem;
-  letter-spacing: 0.125rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -256,10 +380,10 @@ body.capaldi {
   font-family: 'Arial MT Extra Bold', sans-serif;
   font-size: 2.25rem;
   line-height: 1.1;
-  letter-spacing: 0.0625rem;
+  letter-spacing: 0.025em;
   -webkit-text-fill-color: rgba(0, 0, 0, 0.5);
-  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #fff;
+  -webkit-text-stroke-width: 1px;
 }
 
 .mccoy .title {
@@ -268,19 +392,20 @@ body.capaldi {
   font-size: 2.875rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.125rem;
   line-height: 0.9;
   text-shadow: 0 0 40px #260362;
   text-transform: uppercase;
 }
 
-.eccleston .title,.tennant .title {
+.eccleston-tennant .title {
   color: #fff;
   font-family: 'Futura Book', sans-serif;
   font-size: 2.25rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   line-height: 0.9;
-  text-shadow: 0 0 20px #1c0201;
+  text-shadow: 1px 2px 3px rgba(28, 2, 1, 0.9);
   text-transform: uppercase;
 }
 
@@ -290,7 +415,7 @@ body.capaldi {
   font-size: 1.875rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  letter-spacing: 6;
+  letter-spacing: 0.2em;
   line-height: 1.2;
   text-shadow: 0 0 20px #15131e;
   text-transform: uppercase;
@@ -303,35 +428,220 @@ body.capaldi {
   font-size: 2.875rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  letter-spacing: 6;
+  letter-spacing: 0.2em;
   line-height: 1;
   text-shadow: 1px 2px 3px #2c1a16;
   text-transform: uppercase;
 }
 
-.title-create {
-  position: absolute;
-  bottom: 5%;
-  left: 5%;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
+.capaldi .title {
+  color: #fff;
+  font-family: 'Heroic Condensed Medium', sans-serif;
+  font-size: 2.5rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.125em;
+  line-height: 1;
+  text-shadow: 0 0 20px #0b1f38, 0 0 10px #0b1f38;
+  text-transform: uppercase;
+  word-spacing: 0.5rem;
 }
 
-.title-create:focus,.title-create:hover {
+.vortex {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.share,.title-create {
+  position: absolute;
+  bottom: 1.5rem;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-animation-name: rotateIn;
+          animation-name: rotateIn;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.share:focus,.share:hover,.title-create:focus,.title-create:hover {
   outline: 0;
 }
 
-.title-create:focus img,.title-create:hover img {
+.share:focus img,.share:hover img,.title-create:focus img,.title-create:hover img {
   opacity: 1;
+}
+
+.share img,.title-create img {
+  opacity: 0.5;
+  -webkit-transition: opacity 100ms ease-out;
+  transition: opacity 100ms ease-out;
+}
+
+.title-create {
+  left: 1.5rem;
+}
+
+.title-create.spin img {
+  -webkit-animation-name: spin;
+          animation-name: spin;
 }
 
 .title-create img {
   width: 32px;
   height: 32px;
-  opacity: 0.5;
-  -webkit-transition: opacity 100ms ease-out;
-  transition: opacity 100ms ease-out;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.share {
+  right: 1.5rem;
+}
+
+.share img {
+  width: 110px;
+  height: 32px;
+}
+
+.screenshot {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.screenshot .title {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.screenshot img {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 600px;
+}
+
+.modal {
+  position: relative;
+  z-index: 2;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container {
+  max-width: 420px;
+  max-height: 100vh;
+  padding: 1.875rem;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  height: 44px;
+  width: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #787878;
+  font-family: 'Futura Book', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 2.75rem;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.modal-close:hover {
+  border-color: #000;
+  color: #000;
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.micromodal-slide[aria-hidden='false'] .modal-overlay {
+  -webkit-animation: mmfadeIn 300ms cubic-bezier(0, 0, 0.2, 1);
+          animation: mmfadeIn 300ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden='false'] .modal-container {
+  -webkit-animation: mmslideIn 300ms cubic-bezier(0, 0, 0.2, 1);
+          animation: mmslideIn 300ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden='true'] .modal-overlay {
+  -webkit-animation: mmfadeOut 300ms cubic-bezier(0, 0, 0.2, 1);
+          animation: mmfadeOut 300ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden='true'] .modal-container {
+  -webkit-animation: mmslideOut 300ms cubic-bezier(0, 0, 0.2, 1);
+          animation: mmslideOut 300ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide .modal-container,.micromodal-slide .modal-overlay {
+  will-change: transform;
+}
+
+.modal-share {
+  margin-top: 1.375rem;
+}
+
+@media (min-width: 360px) {
+  .title-create img {
+    width: 44px;
+    height: 44px;
+  }
+  .share img {
+    width: 152px;
+    height: 44px;
+  }
 }
 
 @media (min-width: 400px) {
@@ -356,13 +666,16 @@ body.capaldi {
   .mccoy .title {
     font-size: 3.5rem;
   }
-  .eccleston .title,.tennant .title {
+  .eccleston-tennant .title {
     font-size: 2.75rem;
   }
   .smith .title {
     font-size: 2.25rem;
   }
   .smith2 .title {
+    font-size: 3.5rem;
+  }
+  .capaldi .title {
     font-size: 3.5rem;
   }
 }
@@ -398,19 +711,30 @@ body.capaldi {
   .mccoy .title {
     font-size: 4.375rem;
   }
-  .eccleston .title,.tennant .title {
+  .eccleston-tennant .title {
     font-size: 3.75rem;
-    text-shadow: 0 0 40px #1c0201;
+    text-shadow: 2px 3px 3px rgba(28, 2, 1, 0.9);
   }
   .smith .title {
     font-size: 2.875rem;
-    letter-spacing: 8;
     text-shadow: 0 0 40px #15131e;
   }
   .smith2 .title {
     font-size: 5rem;
-    letter-spacing: 10;
     text-shadow: 2px 3px 3px rgba(44, 26, 22, 0.8);
+  }
+  .capaldi .title {
+    font-size: 5rem;
+    text-shadow: 0 0 40px #0b1f38, 0 0 20px #0b1f38;
+  }
+  .share,.title-create {
+    bottom: 2rem;
+  }
+  .title-create {
+    left: 2rem;
+  }
+  .share {
+    right: 2rem;
   }
 }
 
@@ -434,7 +758,7 @@ body.capaldi {
   .mccoy .title {
     font-size: 6rem;
   }
-  .eccleston .title,.tennant .title {
+  .eccleston-tennant .title {
     font-size: 4.375rem;
   }
   .smith .title {
@@ -442,6 +766,18 @@ body.capaldi {
   }
   .smith2 .title {
     font-size: 6.25rem;
+  }
+  .capaldi .title {
+    font-size: 6.25rem;
+  }
+  .share,.title-create {
+    bottom: 2.5rem;
+  }
+  .title-create {
+    left: 2.5rem;
+  }
+  .share {
+    right: 2.5rem;
   }
 }
 
@@ -458,17 +794,29 @@ body.capaldi {
   .mccoy .title {
     font-size: 6.875rem;
   }
-  .eccleston .title,.tennant .title {
+  .eccleston-tennant .title {
     font-size: 5rem;
-    text-shadow: 0 0 60px #1c0201;
+    text-shadow: 3px 4px 5px rgba(28, 2, 1, 0.9);
   }
   .smith .title {
     font-size: 4.375rem;
-    letter-spacing: 10;
     text-shadow: 0 0 80px #15131e;
   }
   .smith2 .title {
     font-size: 6.875rem;
+  }
+  .capaldi .title {
+    font-size: 7.5rem;
+    text-shadow: 0 0 80px #0b1f38, 0 0 40px #0b1f38;
+  }
+  .share,.title-create {
+    bottom: 3rem;
+  }
+  .title-create {
+    left: 3rem;
+  }
+  .share {
+    right: 3rem;
   }
 }
 
@@ -503,7 +851,7 @@ body.capaldi {
   .mccoy .title {
     font-size: 7.75rem;
   }
-  .eccleston .title,.tennant .title {
+  .eccleston-tennant .title {
     font-size: 6.25rem;
   }
   .smith .title {
@@ -511,6 +859,18 @@ body.capaldi {
   }
   .smith2 .title {
     font-size: 7.75rem;
+  }
+  .capaldi .title {
+    font-size: 8.125rem;
+  }
+  .share,.title-create {
+    bottom: 3.5rem;
+  }
+  .title-create {
+    left: 4rem;
+  }
+  .share {
+    right: 4rem;
   }
 }
 
@@ -542,11 +902,14 @@ body.capaldi {
   .mccoy .title {
     font-size: 8.75rem;
   }
-  .eccleston .title,.tennant .title {
+  .eccleston-tennant .title {
     font-size: 6.875rem;
   }
   .smith2 .title {
     font-size: 8.75rem;
     text-shadow: 3px 4px 3px rgba(44, 26, 22, 0.7);
+  }
+  .capaldi .title {
+    font-size: 9.375rem;
   }
 }

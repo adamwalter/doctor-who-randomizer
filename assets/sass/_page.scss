@@ -1,0 +1,121 @@
+.vortex {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.title-create,
+.share {
+	position: absolute;
+	bottom: 1.5rem;
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+	animation-name: rotateIn;
+	animation-delay: 500ms;
+	animation-duration: 1500ms;
+	animation-fill-mode: both;
+
+	@media (min-width: 600px) {
+		bottom: 2rem;
+	}
+
+	@media (min-width: 800px) {
+		bottom: 2.5rem;
+	}
+
+	@media (min-width: 1000px) {
+		bottom: 3rem;
+	}
+
+	@media (min-width: 1200px) {
+		bottom: 3.5rem;
+	}
+
+	&:hover,
+	&:focus {
+		outline: 0;
+
+		img {
+			opacity: 1;
+		}
+	}
+
+	img {
+		opacity: 0.5;
+		transition: opacity 100ms ease-out;
+	}
+}
+
+.title-create {
+	left: 1.5rem;
+
+	@media (min-width: 600px) {
+		left: 2rem;
+	}
+
+	@media (min-width: 800px) {
+		left: 2.5rem;
+	}
+
+	@media (min-width: 1000px) {
+		left: 3rem;
+	}
+
+	@media (min-width: 1200px) {
+		left: 4rem;
+	}
+
+	&.spin {
+
+		img {
+			animation-name: spin;
+		}
+	}
+
+	img {
+		width: 32px;
+		height: 32px;
+		animation-duration: 400ms;
+		animation-fill-mode: both;
+
+		@media (min-width: 360px) {
+			width: 44px;
+			height: 44px;
+		}
+	}
+}
+
+.share {
+	right: 1.5rem;
+
+	@media (min-width: 600px) {
+		right: 2rem;
+	}
+
+	@media (min-width: 800px) {
+		right: 2.5rem;
+	}
+
+	@media (min-width: 1000px) {
+		right: 3rem;
+	}
+
+	@media (min-width: 1200px) {
+		right: 4rem;
+	}
+
+	img {
+		width: 110px;
+		height: 32px;
+
+		@media (min-width: 360px) {
+			width: 152px;
+			height: 44px;
+		}
+	}
+}

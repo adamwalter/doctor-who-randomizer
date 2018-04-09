@@ -1,0 +1,23 @@
+.screenshot {
+	position: relative;
+	width: 800px;
+	height: 600px;
+	overflow: hidden;
+
+	.title {
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		left: 0;
+		transform: translate(0, -50%);
+	}
+
+	img {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		height: 600px;
+	}
+}

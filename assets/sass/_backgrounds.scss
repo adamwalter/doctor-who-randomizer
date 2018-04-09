@@ -1,0 +1,53 @@
+body {
+	background-attachment: fixed;
+	background-color: #000;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&.hartnell {
+		background-image: url('../images/bg-hartnell.jpg');
+	}
+
+	&.troughton {
+		background-image: url('../images/bg-troughton.jpg');
+	}
+
+	&.pertwee {
+		background-image: url('../images/bg-pertwee.jpg');
+	}
+
+	&.tbaker,
+	&.tbaker2 {
+		background-image: url('../images/bg-tbaker.jpg');
+	}
+
+	&.davison {
+		background-image: url('../images/bg-davison.jpg');
+	}
+
+	&.cbaker {
+		background-image: url('../images/bg-cbaker.jpg');
+	}
+
+	&.mccoy {
+		background-image: url('../images/bg-mccoy.jpg');
+	}
+
+	&.eccleston-tennant {
+		background-image: url('../images/bg-eccleston-tennant.jpg');
+	}
+
+	&.smith {
+		background-image: url('../images/bg-smith.jpg');
+	}
+
+	&.smith2 {
+		background-image: url('../images/bg-smith2.jpg');
+	}
+
+	&.capaldi {
+		background-image: url('../images/bg-capaldi.jpg');
+	}
+
+}
