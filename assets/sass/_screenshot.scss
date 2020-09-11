@@ -1,23 +1,71 @@
+.screenshot-wrapper {
+	width: 800px;
+	height: 600px;
+}
+
 .screenshot {
 	position: relative;
+	z-index: -1;
 	width: 800px;
 	height: 600px;
 	overflow: hidden;
-
-	.title {
-		position: absolute;
-		z-index: 1;
-		top: 50%;
-		left: 0;
-		transform: translate(0, -50%);
-	}
+	background-color: #fff;
 
 	img {
 		position: absolute;
-		z-index: 0;
 		top: 0;
 		left: 50%;
 		transform: translateX(-50%);
 		height: 600px;
+	}
+
+	.title {
+		z-index: 1;
+		padding: 0 100px;
+
+		.hartnell & {
+			font-size: 6rem;
+		}
+
+		.troughton & {
+			font-size: 4.75rem;
+		}
+
+		.pertwee & {
+			font-size: 4.625rem;
+		}
+
+		.tbaker & {
+			font-size: 4.5rem;
+		}
+
+		.tbaker2 & {
+			font-size: 4.75rem;
+		}
+
+		.davison &,
+		.cbaker & {
+			font-size: 4.75rem;
+		}
+
+		.mccoy & {
+			font-size: 6rem;
+		}
+
+		.eccleston-tennant & {
+			font-size: 4.625rem;
+		}
+
+		.smith & {
+			font-size: 3.75rem;
+		}
+
+		.smith2 & {
+			font-size: 6rem;
+		}
+
+		.capaldi & {
+			font-size: 6rem;
+		}
 	}
 }

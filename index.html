@@ -27,15 +27,39 @@
 
 <body>
 
-	<header class="site-header screen-reader-text">
-		<h1>Doctor Who <br>Episode Title Randomizer</h1>
-		<p>Created under the influence of jelly babies and operating under a very complex scientific principle called pot luck.</p>
-	</header>
+	<div id="container" class="container">
+		<div id="vortex" class="vortex">
+			<p id="title" class="title"></p>
+			<button id="title-create" class="title-create"><img src="assets/images/reload.svg" alt="Create a new title"><span class="screen-reader-text">Create a new title</span></button>
+			<button id="share" class="share"><img src="assets/images/share.svg" alt="Share your title"><span class="screen-reader-text">Share your title</span></button>
+		</div>
+	</div>
 
-	<div id="vortex" class="vortex">
-		<p id="title" class="title"></p>
-		<button id="title-create" class="title-create"><img src="assets/images/reload.svg" alt="Create a new title"><span class="screen-reader-text">Create a new title</span></button>
-		<button id="share" class="share"><img src="assets/images/share.svg" alt="Share your title"><span class="screen-reader-text">Share your title</span></button>
+	<div id="screenshot-wrapper" class="screenshot-wrapper" aria-hidden="true" role="presentation">
+		<div class="screenshot">
+			<p class="title"></p>
+			<div id="screenshot-img" class="screenshot-img"></div>
+		</div>
+	</div>
+
+	<div class="modal micromodal-slide" id="share-modal" aria-hidden="true">
+		<div class="modal-overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal-container" role="dialog" aria-modal="true">
+				<div id="screenshot-tv-wrapper" class="screenshot-tv-wrapper">
+					<div class="screenshot-tv-frame" aria-hidden="true" role="presentation"><img src="/assets/images/tv.png" alt=""></div>
+					<div id="screenshot-tv" class="screenshot-tv"></div>
+				</div>
+				<div class="modal-header">
+					<h1>Doctor Who <br>Episode Title Randomizer</h1>
+					<p>Share your unique title with the Universe!</p>
+				</div>
+				<div id="download" class="download"></div>
+				<div class="modal-footer">
+					<a href="http://adamwalter.com/" title="A Thing by Adam Walter" target="_blank"><img src="assets/images/logo.png" alt="A Thing by Adam Walter" width="176" height="38" rel="nofollow" onClick="_gaq.push(['_trackEvent', 'External Link', 'adamwalter.com Link', 'adamwalter.com Link']);"></a>
+				</div>
+				<button class="modal-close" aria-label="Close modal" data-micromodal-close>&times;</button>
+			</div>
+		</div>
 	</div>
 
 	<script src="assets/scripts/site/main.js"></script>

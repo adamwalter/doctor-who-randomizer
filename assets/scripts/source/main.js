@@ -1,5 +1,5 @@
 (function() {
-    var body, title, createTitle, share;
+    var body, title, createTitle, screenshot, screenshotImg, isSharing;
 
 	var things = ['Alien','Aliens','Ambassadors','Androids','Angels','Arc','Ark','Army','Assassin','Astronauts','Asylum',
 	'Barbarians','Beasts','Bells','Black&nbsp;Hole','Blob','Brain','Carnival','Caves','City','Claw','Colony','Creature','Crypt','Cult','Curse',
@@ -28,7 +28,7 @@
 	'the Weeping&nbsp;Angels','Weng&#8209;Chiang','the Werewolf','the Wirrn','the Xeraphin','Xoanon','the Yeti','the Zarbi','the Zygons'];
 
 	var aliensDesc = ['Army','Asylum','Attack','Birth','Claws','Colony','Conquest','Crypt','Curse','Dawn','Death','Desolation',
-	'Destiny','Empire','Evil','Evolution','Extermination','Fires','Genesis','Horns','Horror','Invasion','Kingdom','Land','Last',
+	'Destiny','Empire','Evil','Evolution','Fires','Genesis','Horns','Horror','Invasion','Kingdom','Land','Last',
 	'Legend','Lost Planet','Mind','Nightmare','Planet','Power','Resurrection','Return','Revenge','Rise','Sanctuary','Sins',
 	'Terror','Treachery','Tomb','Victory','Voyage','Wrath'];
 
@@ -86,26 +86,41 @@
 	 */
 	function newTitle() {
 		var newTitle = makeTitle(),
-		    doctor = randomDoctor();
+		    doctor = randomDoctor(),
+			bg = screenshotImg.querySelector('img'),
+			bgSrc = '/assets/images/bg-' + doctor + '.jpg';
 
+		// Change body class
 		body.className = doctor;
-		title.innerHTML = newTitle;
-	}
 
-	function convertCanvasToImage(canvas) {
-		var image = new Image();
-		image.src = canvas.toDataURL('image/png');
-		return image;
+		// Change title
+		Array.prototype.forEach.call(title, function(el, i) {
+			el.innerHTML = newTitle;
+		});
+
+		// If image exists change src, otherwise create image
+		if (bg === null) {
+			bg = document.createElement('img');
+			bg.src = bgSrc;
+			screenshotImg.appendChild(bg);
+		} else {
+			bg.src = bgSrc;
+		}
+
 	}
 
     function onDocumentReady() {
 		body = document.getElementsByTagName('body')[0];
-		title = document.getElementById('title');
+		title = document.querySelectorAll('.title');
 		createTitle = document.getElementById('title-create');
-		share = document.getElementById('share');
+		screenshot = document.getElementById('screenshot-wrapper');
+		screenshotImg = document.getElementById('screenshot-img');
+		isSharing = false;
 
+		// Create new title on load
 		newTitle();
 
+		// Create new title on click
 		createTitle.addEventListener('click', function() {
 
 			var button = this;
@@ -120,13 +135,68 @@
 
 		});
 
+		// Enable FastClick
 		FastClick.attach(document.body);
 
-		MicroModal.init({
-			disableScroll: true,
-			disableFocus: true,
-			awaitCloseAnimation: true,
+		// Share
+		var share = document.getElementById('share');
+
+		share.addEventListener('click', function() {
+
+			if (isSharing === false) {
+
+				// Double-click protection
+				isSharing = true;
+
+				// Generate screenshot and open modal with options
+				domtoimage.toJpeg(screenshot, {
+					quality: 0.8
+				})
+				.then(function (dataUrl) {
+
+					var tv = document.getElementById('screenshot-tv'),
+						download = document.getElementById('download'),
+					    link = download.querySelector('a'),
+					    img = tv.querySelector('img'),
+					    title = document.getElementById('title').textContent.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+
+					// If image doesn't exist, create it
+					if (img === null) {
+						img = new Image();
+						tv.appendChild(img);
+					}
+
+					// If link doesn't exist, create it
+					if (link === null) {
+						link = document.createElement('a');
+						download.appendChild(link);
+					}
+
+					// Update attributes
+					img.src = dataUrl;
+					link.download = title + '.jpg';
+					link.href = dataUrl;
+					link.title = 'Click to download screenshot';
+					link.className = 'download';
+					link.innerHTML = '<span class="text">Download</span><img class="icon" src="/assets/images/download.svg">';
+
+					// Open modal
+					MicroModal.show('share-modal', {
+						disableScroll: true,
+						disableFocus: true,
+						awaitCloseAnimation: true,
+						onClose: function() {
+							isSharing = false;
+						}
+					});
+				})
+				.catch(function (error) {
+					console.error('ERROR! There is a fault in the Matrix!', error);
+				});
+			}
+
 		});
+
     }
 
     document.addEventListener('DOMContentLoaded', function() {

@@ -11,6 +11,7 @@
 		'/assets/images/bg-smith.jpg',
 		'/assets/images/bg-smith2.jpg',
 		'/assets/images/bg-tbaker.jpg',
+		'/assets/images/bg-tbaker2.jpg',
 		'/assets/images/bg-troughton.jpg'
 	];
 

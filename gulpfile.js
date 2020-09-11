@@ -85,7 +85,8 @@ gulp.task('js', ['jshint'], function () {
 	return gulp.src([
 		'assets/scripts/source/promise-polyfill.js',
 		'assets/scripts/source/fastclick.js',
-		'assets/scripts/source/html2canvas.js',
+		'assets/scripts/source/dom-to-image.js',
+		'assets/scripts/source/micromodal.js',
 		'assets/scripts/source/preload.js',
 		'assets/scripts/source/main.js'
 		])

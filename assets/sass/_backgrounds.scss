@@ -1,52 +1,58 @@
-body {
+.container {
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	background-attachment: fixed;
 	background-color: #000;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 
-	&.hartnell {
+	.hartnell & {
 		background-image: url('../images/bg-hartnell.jpg');
 	}
 
-	&.troughton {
+	.troughton  & {
 		background-image: url('../images/bg-troughton.jpg');
 	}
 
-	&.pertwee {
+	.pertwee  & {
 		background-image: url('../images/bg-pertwee.jpg');
 	}
 
-	&.tbaker,
-	&.tbaker2 {
+	.tbaker &,
+	.tbaker2 & {
 		background-image: url('../images/bg-tbaker.jpg');
 	}
 
-	&.davison {
+	.davison & {
 		background-image: url('../images/bg-davison.jpg');
 	}
 
-	&.cbaker {
+	.cbaker & {
 		background-image: url('../images/bg-cbaker.jpg');
 	}
 
-	&.mccoy {
+	.mccoy & {
 		background-image: url('../images/bg-mccoy.jpg');
 	}
 
-	&.eccleston-tennant {
+	.eccleston-tennant & {
 		background-image: url('../images/bg-eccleston-tennant.jpg');
 	}
 
-	&.smith {
+	.smith & {
 		background-image: url('../images/bg-smith.jpg');
 	}
 
-	&.smith2 {
+	.smith2 & {
 		background-image: url('../images/bg-smith2.jpg');
 	}
 
-	&.capaldi {
+	.capaldi & {
 		background-image: url('../images/bg-capaldi.jpg');
 	}
 

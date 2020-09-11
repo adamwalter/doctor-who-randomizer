@@ -1,4 +1,3 @@
-/* jshint ignore:start */
 // Micromodal
 // https://micromodal.now.sh/
 (function (global, factory) {

@@ -261,7 +261,13 @@ html {
   white-space: nowrap;
 }
 
-body {
+.container {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-attachment: fixed;
   background-color: #000;
   background-position: center center;
@@ -269,47 +275,47 @@ body {
   background-size: cover;
 }
 
-body.hartnell {
+.hartnell .container {
   background-image: url("../images/bg-hartnell.jpg");
 }
 
-body.troughton {
+.troughton .container {
   background-image: url("../images/bg-troughton.jpg");
 }
 
-body.pertwee {
+.pertwee .container {
   background-image: url("../images/bg-pertwee.jpg");
 }
 
-body.tbaker,body.tbaker2 {
+.tbaker2 .container,.tbaker .container {
   background-image: url("../images/bg-tbaker.jpg");
 }
 
-body.davison {
+.davison .container {
   background-image: url("../images/bg-davison.jpg");
 }
 
-body.cbaker {
+.cbaker .container {
   background-image: url("../images/bg-cbaker.jpg");
 }
 
-body.mccoy {
+.mccoy .container {
   background-image: url("../images/bg-mccoy.jpg");
 }
 
-body.eccleston-tennant {
+.eccleston-tennant .container {
   background-image: url("../images/bg-eccleston-tennant.jpg");
 }
 
-body.smith {
+.smith .container {
   background-image: url("../images/bg-smith.jpg");
 }
 
-body.smith2 {
+.smith2 .container {
   background-image: url("../images/bg-smith2.jpg");
 }
 
-body.capaldi {
+.capaldi .container {
   background-image: url("../images/bg-capaldi.jpg");
 }
 
@@ -463,14 +469,6 @@ body.capaldi {
   border: 0;
   background-color: transparent;
   cursor: pointer;
-  -webkit-animation-name: rotateIn;
-          animation-name: rotateIn;
-  -webkit-animation-delay: 500ms;
-          animation-delay: 500ms;
-  -webkit-animation-duration: 1500ms;
-          animation-duration: 1500ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
 }
 
 .share:focus,.share:hover,.title-create:focus,.title-create:hover {
@@ -514,30 +512,76 @@ body.capaldi {
   height: 32px;
 }
 
+.screenshot-wrapper {
+  width: 800px;
+  height: 600px;
+}
+
 .screenshot {
   position: relative;
+  z-index: -1;
   width: 800px;
   height: 600px;
   overflow: hidden;
-}
-
-.screenshot .title {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  background-color: #fff;
 }
 
 .screenshot img {
   position: absolute;
-  z-index: 0;
   top: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   height: 600px;
+}
+
+.screenshot .title {
+  z-index: 1;
+  padding: 0 6.25rem;
+}
+
+.hartnell .screenshot .title {
+  font-size: 6rem;
+}
+
+.troughton .screenshot .title {
+  font-size: 4.75rem;
+}
+
+.pertwee .screenshot .title {
+  font-size: 4.625rem;
+}
+
+.tbaker .screenshot .title {
+  font-size: 4.5rem;
+}
+
+.tbaker2 .screenshot .title {
+  font-size: 4.75rem;
+}
+
+.cbaker .screenshot .title,.davison .screenshot .title {
+  font-size: 4.75rem;
+}
+
+.mccoy .screenshot .title {
+  font-size: 6rem;
+}
+
+.eccleston-tennant .screenshot .title {
+  font-size: 4.625rem;
+}
+
+.smith .screenshot .title {
+  font-size: 3.75rem;
+}
+
+.smith2 .screenshot .title {
+  font-size: 6rem;
+}
+
+.capaldi .screenshot .title {
+  font-size: 6rem;
 }
 
 .modal {
@@ -560,16 +604,14 @@ body.capaldi {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .modal-container {
-  max-width: 420px;
+  max-width: 500px;
   max-height: 100vh;
-  padding: 1.875rem;
   overflow-y: auto;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 4px;
+  color: #fff;
 }
 
 .modal-close {
@@ -629,8 +671,23 @@ body.capaldi {
   will-change: transform;
 }
 
-.modal-share {
-  margin-top: 1.375rem;
+.screenshot-tv-wrapper {
+  position: relative;
+}
+
+.screenshot-tv-frame {
+  position: relative;
+  z-index: 1;
+}
+
+.screenshot-tv {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+}
+
+.screenshot-tv img {
+  width: 220px;
 }
 
 @media (min-width: 360px) {
