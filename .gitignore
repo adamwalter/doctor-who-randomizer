@@ -1,5 +1,6 @@
 # System & Development
 node_modules
+package-lock.json
 .sass-cache
 robots.txt
 sitemap.xml
