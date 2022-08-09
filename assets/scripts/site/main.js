@@ -2434,6 +2434,7 @@ return MicroModal;
 		var share = document.getElementById('share');
 
 		share.addEventListener('click', function() {
+			console.log('Click!');
 
 			if (isSharing === false) {
 

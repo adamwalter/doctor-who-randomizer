@@ -1,23 +1,46 @@
 .modal {
 	position: relative;
 	z-index: 2;
+
+	h1 {
+		margin-top: 1rem;
+		color: #1af3bf;
+		font-family: 'Futura Bold', sans-serif;
+		font-size: 23px;
+		text-align: center;
+		text-transform: uppercase;
+
+		span {
+			display: block;
+		}
+
+		.line1 {
+			font-size: 50px;
+			letter-spacing: -1px;
+		}
+
+		.line2 {
+			letter-spacing: 1px;
+		}
+	}
 }
 
 .modal-overlay {
 	position: fixed;
 	top: 0;
-	left: 0;
 	right: 0;
 	bottom: 0;
+	left: 0;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 	background-color: rgba(0, 0, 0, 0.9);
 }
 
 .modal-container {
 	max-width: 500px;
 	max-height: 100vh;
+	padding: 32px;
 	overflow-y: auto;
 	color: #fff;
 }
@@ -27,8 +50,8 @@
 	top: 0;
 	right: 0;
 	display: block;
-	height: 44px;
 	width: 44px;
+	height: 44px;
 	padding: 0;
 	border: 0;
 	background: transparent;
